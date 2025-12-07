@@ -1,0 +1,497 @@
+:root {
+  --bg-dark: #1e1e1e;
+  --bg-panel: rgba(30, 30, 30, 0.90);
+  --accent: #d32f2f;
+  --text-main: #e0e0e0;
+  --text-muted: #aaaaaa;
+  --border: rgba(255, 255, 255, 0.1);
+  --steam-color: #171a21;
+  --steam-hover: #2a475e;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #111;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #0b0b0b;
+  cursor: crosshair;
+}
+
+.leaflet-image-layer {
+  image-rendering: pixelated;
+}
+
+/* --- HUD & UI Styling (Как было раньше) --- */
+#hud {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(10px);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#coords-panel {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: var(--bg-panel);
+  backdrop-filter: blur(10px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  pointer-events: none;
+}
+
+.coord-row {
+  font-size: 13px;
+  font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', monospace;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.coord-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  margin-right: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.map-selector-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.map-icon {
+  font-size: 16px;
+  margin-right: 8px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* --- Custom Select Styling --- */
+.custom-select {
+  position: relative;
+  min-width: 180px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 4px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.select-trigger:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.select-trigger .map-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.select-trigger .selected-text {
+  margin-right: auto;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.select-trigger .arrow {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+
+.custom-select.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+
+  /* Scrolling Logic */
+  max-height: 60vh; /* Max height 60% of viewport */
+  overflow-y: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.custom-select.open .select-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Option Item */
+.option {
+  padding: 10px 12px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  text-transform: capitalize;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding-left: 16px; /* Cool slide effect */
+}
+
+.option.selected {
+  background: rgba(211, 47, 47, 0.2); /* Accent color opacity */
+  color: #fff;
+  font-weight: 700;
+  border-left: 3px solid var(--accent);
+}
+
+.option.primary {
+  font-weight: 800; /* Extra Bold */
+}
+
+.option.primary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding-left: 16px;
+}
+
+/* Custom Scrollbar for Options */
+.select-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.select-options::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 0 8px 8px 0;
+}
+
+.select-options::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.select-options::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* -- */
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+}
+
+.layer-switch {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 2px;
+  border: 1px solid var(--border);
+}
+
+.layer-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.layer-btn:hover {
+  color: #fff;
+}
+
+.layer-btn.active {
+  background: var(--text-main);
+  color: #000;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.layer-btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.steam-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: var(--steam-color);
+  border: 1px solid var(--border);
+  color: #c5c3c0;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.steam-btn:hover {
+  background: var(--steam-hover);
+  color: #fff;
+  border-color: #66c0f4;
+}
+
+.steam-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.steam-btn.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+.leaflet-control-attribution a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  background: rgba(30, 30, 30, 0.7);
+  color: var(--text-muted);
+  border-top-left-radius: 5px;
+  padding: 2px 5px;
+}
+
+.map-size-control {
+  background: rgba(30, 30, 30, 0.7);
+  color: var(--text-muted);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--bg-panel);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.leaflet-popup-content {
+  margin: 8px 12px;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+}
+
+.copied-popup .leaflet-popup-close-button {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #hud {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  select#mapSelect {
+    min-width: auto;
+  }
+
+  #coords-panel {
+    bottom: 30px;
+    width: 90%;
+  }
+}
+
+/* ========================================= */
+/* === STYLES FOR MAP LABELS (Topographic) === */
+/* ========================================= */
+
+.map-label {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: #3a2d49;
+  white-space: nowrap;
+  text-align: center;
+  pointer-events: none;
+
+  /* Мощная белая обводка (Halo) для читаемости на любой карте */
+  text-shadow:
+    2px 0px 0 #fff, -2px 0px 0 #fff, 0px 2px 0 #fff, 0px -2px 0 #fff,
+    1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+
+.map-label span {
+  display: block;
+  line-height: 1;
+}
+
+/* --- TYPES --- */
+
+/* CAPITAL: Огромный, жирный, черный, капсом */
+.map-label.type-capital {
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  z-index: 1000 !important;
+  /* Всегда сверху */
+}
+
+/* CITY: Большой, жирный, темно-серый, капсом */
+.map-label.type-city {
+  font-size: 16px;
+  font-weight: 800;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 900 !important;
+}
+
+/* VILLAGE: Средний, черный */
+.map-label.type-village {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+/* LOCAL / CAMP / RUIN: Мелкие локации */
+.map-label.type-local,
+.map-label.type-camp,
+.map-label.type-ruin {
+  font-weight: 600;
+  color: #444;
+}
+
+/* RUIN spec: Коричневатый */
+.map-label.type-ruin {
+  color: #5d4037;
+  font-family: 'Georgia', serif;
+}
+
+/* HILL: Курсив, коричневый, с засечками (классика топографии) */
+.map-label.type-hill {
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+  color: #5d4037;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+/* MARINE: Курсив, синий */
+.map-label.type-marine {
+  font-size: 13px;
+  font-weight: 600;
+  font-style: italic;
+  color: #01579b;
+  font-family: 'Georgia', serif;
+}
+
+
+/* ========================================= */
+/* === ZOOM VISIBILITY LOGIC (CSS Based) === */
+/* ========================================= */
+
+/*
+    Логика: Классы вешаются на #map (контейнер).
+    CSS скрывает ненужное. Это быстрее, чем перебирать маркеры в JS.
+*/
+
+/* Уровень 0 (Зум 0 - 0.9): Только Capital */
+.view-level-0 .map-label {
+  display: none;
+}
+
+/* Уровень 1 (Зум 1 - 1.9): Capital + City */
+.view-level-1 .map-label:not(.type-capital) {
+  display: none;
+}
+
+.view-level-2 .map-label:not(.type-capital):not(.type-city) {
+  display: none;
+}
+
+.view-level-3 .map-label:not(.type-capital):not(.type-city):not(.type-village) {
+  display: none;
+}

@@ -1,0 +1,5 @@
+ARG DZMAP_IMAGE=ghcr.io/woozymasta/dzmap
+ARG DZMAP_TAG=slim
+
+FROM $DZMAP_IMAGE:$DZMAP_TAG
+RUN ["/bin/loader", "--log-level=trace"]

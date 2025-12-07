@@ -1,0 +1,6 @@
+ARG DZMAP_IMAGE=ghcr.io/woozymasta/dzmap
+ARG DZMAP_TAG=latest
+
+FROM $DZMAP_IMAGE:$DZMAP_TAG
+ENV ZOOM_LIMIT=4
+RUN ["/bin/loader", "--log-level=trace"]

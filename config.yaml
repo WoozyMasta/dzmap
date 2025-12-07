@@ -1,0 +1,369 @@
+attribution: '<a href="https://dayz.xam.nu" target="_blank">Tiles © Xam.nu</a>'
+attribution_izurvive: &izurvive '<a href="https://izurvive.com" target="_blank">Tiles © iZurvive</a>'
+maps:
+  # official maps
+  - name: chernarusplus
+    index: 0
+    size: 15360
+    id: 221100
+    aliases: ["chernarus"]
+    topographic: https://static.xam.nu/dayz/maps/chernarusplus/1.27/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/chernarusplus/1.27/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/chernarusplus/1.28-2.json
+
+  - name: enoch
+    index: 1
+    size: 12800
+    id: 221100
+    aliases: ["livonia"]
+    topographic: https://static.xam.nu/dayz/maps/livonia/1.27/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/livonia/1.27/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/livonia/1.28-2.json
+
+  - name: sakhal
+    index: 2
+    size: 15360
+    id: 2968040
+    aliases: ["frostline"]
+    topographic: https://static.xam.nu/dayz/maps/sakhal/1.27/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/sakhal/1.27/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/sakhal/1.28-2.json
+
+  # modded maps (xam.nu)
+  - name: alteria
+    size: 8192
+    id: 3296994216
+    topographic: https://static.xam.nu/dayz/maps/alteria/1.0/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/alteria/1.0/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/alteria/May.3.json
+
+  - name: anastara
+    size: 10240
+    id: 2973953648
+    topographic: https://static.xam.nu/dayz/maps/anastara/Jan.15/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/anastara/Jan.15/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/anastara/Jan.15-6.json
+
+  - name: antoria
+    size: 20480
+    id: 2966495799
+    topographic: https://static.xam.nu/dayz/maps/antoria/25.05.18/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/antoria/25.05.18/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/antoria/May.18-1.json
+
+  - name: arsteinen
+    size: 15360
+    id: 2982575649
+    topographic: https://static.xam.nu/dayz/maps/arsteinen/May.28/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/arsteinen/May.28/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/arsteinen/Dec.13-6.json
+
+  - name: avalon
+    size: 20480
+    id: 3225634444
+    topographic: https://static.xam.nu/dayz/maps/avalon/25.05.16/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/avalon/25.05.16/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/avalon/May.16-1.json
+
+  - name: azalea
+    size: 20480
+    id: 3225634444
+    topographic: https://static.xam.nu/dayz/maps/azalea/25.09.24/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/azalea/25.09.24/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/azalea/0.3.4.json
+
+  - name: banov
+    size: 15360
+    id: 2415195639
+    aliases: [banovfrost]
+    topographic: https://static.xam.nu/dayz/maps/banov/24.12.15-1/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/banov/24.12.15-1/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/banov/Sep.14.json
+
+  - name: bitterroot
+    size: 12288
+    id: 2906823750
+    topographic: https://static.xam.nu/dayz/maps/bitterroot/Aug.1/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/bitterroot/Aug.1/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/bitterroot/Jan.11-6.json
+
+  - name: chiemsee
+    size: 10240
+    id: 1580589252
+    topographic: https://static.xam.nu/dayz/maps/chiemsee/2.7/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/chiemsee/2.7/satellite/{z}/{x}/{y}.jpg
+    # locations: https://static.xam.nu/dayz/json/chiemsee/4.0-6.json
+    locations: https://www.izurvive.com/assets/chiemsee/citynames-b3fd27a6.json
+    locations_izurvive: true
+
+  - name: deadfall
+    size: 10240
+    id: 3050117454
+    topographic: https://static.xam.nu/dayz/maps/deadfall/25.07.06/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/deadfall/25.07.06/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/deadfall/Jul.6.json
+
+  - name: deerisle
+    size: 16384
+    id: 1602372402
+    topographic: https://static.xam.nu/dayz/maps/deerisle/5.923/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/deerisle/5.923/satellite/{z}/{x}/{y}.webp
+    locations:  https://static.xam.nu/dayz/json/deerisle/5.923-7.json
+
+  - name: esseker
+    size: 12800
+    id: 2462896799
+    topographic: https://static.xam.nu/dayz/maps/esseker/0.58/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/esseker/0.58/satellite/{z}/{x}/{y}.jpg
+    locations: https://static.xam.nu/dayz/json/esseker/0.58-21.json
+
+  - name: hashima
+    size: 5120
+    id: 2781560371
+    topographic: https://static.xam.nu/dayz/maps/hashima/25.03.30/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/hashima/25.03.30/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/hashima/Jun.8.json
+
+  - name: iztek
+    size: 8192
+    id: 2978912938
+    topographic: https://static.xam.nu/dayz/maps/iztek/2.0.4/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/iztek/2.0.4/satellite/{z}/{x}/{y}.jpg
+    # locations: https://static.xam.nu/dayz/json/iztek/2.0.4-9.json
+    locations: https://www.izurvive.com/assets/iztek/citynames-073f1fad.json
+    locations_izurvive: true
+
+  - name: malvinas
+    size: 12288
+    id: 3390173486
+    topographic: https://static.xam.nu/dayz/maps/malvinas/25.09.17/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/malvinas/25.09.17/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/malvinas/Sep.16.json
+
+  - name: melkart
+    size: 20480
+    id: 2716445223
+    # topographic: https://static.xam.nu/dayz/maps/melkart/1.04/topographic/{z}/{x}/{y}.webp
+    topographic: https://maps.izurvive.com/maps/Melkart-Top/1.3.0/tiles/{z}/{x}/{y}.webp
+    # satellite: https://static.xam.nu/dayz/maps/melkart/1.04/satellite/{z}/{x}/{y}.webp
+    satellite: https://maps.izurvive.com/maps/Melkart-Sat/1.3.0/tiles/{z}/{x}/{y}.webp
+    # locations: https://static.xam.nu/dayz/json/melkart/1.05-6.json
+    locations: https://www.izurvive.com/assets/melkart/citynames-9c571255.json
+    locations_izurvive: true
+    attribution: *izurvive
+
+  - name: namalsk
+    size: 12800
+    id: 2289456201
+    topographic: https://static.xam.nu/dayz/maps/namalsk/May.27/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/namalsk/May.27/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/namalsk/Jun.3-1.json
+
+  - name: nhchernobyl
+    size: 20480
+    id: 2727569951
+    topographic: https://static.xam.nu/dayz/maps/nhchernobyl/Mar.13/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/nhchernobyl/Mar.13/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/nhchernobyl/Jul.22-6.json
+
+  - name: novikostok
+    size: 15360
+    id: 3553075906
+    topographic: https://static.xam.nu/dayz/maps/novikostok/25.11.11/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/novikostok/25.11.11/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/novikostok/Oct.29.json
+
+  - name: nukezzone
+    size: 15360
+    id: 2828800987
+    topographic: https://static.xam.nu/dayz/maps/nukezzone/Mar.13/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/nukezzone/Mar.13/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/nukezzone/Jul.24-6.json
+
+  - name: nyheim
+    size: 15360
+    id: 2633522605
+    topographic: https://static.xam.nu/dayz/maps/nyheim/25.09.22/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/nyheim/25.09.22/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/nyheim/May.28.json
+
+  - name: onforin
+    size: 24576
+    id: 3445058656
+    topographic: https://static.xam.nu/dayz/maps/onforin/Apr.8/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/onforin/Apr.8/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/onforin/Apr.8-6.json
+
+  - name: pnw
+    size: 10240
+    id: 3290318225
+    topographic: https://static.xam.nu/dayz/maps/pnw/25.08.28/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/pnw/25.08.28/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/pnw/2.0-8.json
+
+  - name: pripyat
+    size: 20480
+    id: 3136720512
+    topographic: https://static.xam.nu/dayz/maps/pripyat/19.08/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/pripyat/19.08/satellite/{z}/{x}/{y}.jpg
+    # locations: https://static.xam.nu/dayz/json/pripyat/0.94a-6.json
+    locations: https://www.izurvive.com/assets/pripyat/citynames-d65541f5.json
+    locations_izurvive: true
+
+  - name: raman
+    size: 32768
+    id: 3401182744
+    topographic: https://static.xam.nu/dayz/maps/raman/Mar.14/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/raman/Mar.14/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/raman/Mar.14-6.json
+
+  - name: ros
+    size: 20480
+    id: 2390417799
+    topographic: https://static.xam.nu/dayz/maps/ros/Jul.28/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/ros/Jul.28/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/ros/Jul.28-6.json
+
+  - name: rostow
+    size: 14336
+    id: 2344585107
+    topographic: https://static.xam.nu/dayz/maps/rostow/02.15/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/rostow/02.15/satellite/{z}/{x}/{y}.jpg
+    # locations: https://static.xam.nu/dayz/json/rostow/1.122-6.json
+    locations: https://www.izurvive.com/assets/rostow/citynames-8dd81c6c.json
+    locations_izurvive: true
+
+  - name: sahrani
+    size: 20480
+    id: 3508468461
+    topographic: https://static.xam.nu/dayz/maps/sahrani/25.06.25/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/sahrani/25.06.25/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/sahrani/Jun.25.json
+
+  - name: stuartisland
+    size: 5120
+    id: 1936423383
+    topographic: https://static.xam.nu/dayz/maps/stuartisland/20.04.27/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/stuartisland/20.04.27/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/stuartisland/Apr.27-6.json
+
+  - name: takistanplus
+    size: 12800
+    id: 2563233742
+    aliases: [takistan]
+    topographic: https://static.xam.nu/dayz/maps/takistanplus/1.041/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/takistanplus/1.041/satellite/{z}/{x}/{y}.jpg
+    # locations: https://static.xam.nu/dayz/json/takistanplus/1.0631-6.json
+    locations: https://www.izurvive.com/assets/takistanplus/citynames-d3a7213f.json
+    locations_izurvive: true
+
+  - name: valning
+    size: 10240
+    id: 1880753439
+    topographic: https://static.xam.nu/dayz/maps/valning/26.11/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/valning/26.11/satellite/{z}/{x}/{y}.jpg
+    # locations: https://static.xam.nu/dayz/json/valning/Nov.26-9.json
+    locations: https://www.izurvive.com/assets/valning/citynames-9ddcebb9.json
+    locations_izurvive: true
+
+  - name: vela
+    size: 10240
+    id: 2794308565
+    topographic: https://static.xam.nu/dayz/maps/vela/0.5/topographic/{z}/{x}/{y}.jpg
+    satellite: https://static.xam.nu/dayz/maps/vela/0.5/satellite/{z}/{x}/{y}.jpg
+    # locations: https://static.xam.nu/dayz/json/vela/Dec.29-6.json
+    locations: https://www.izurvive.com/assets/vela/citynames-b6bcf26c.json
+    locations_izurvive: true
+
+  - name: visisland
+    size: 20480
+    id: 3031438368
+    topographic: https://static.xam.nu/dayz/maps/visisland/0.04/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/visisland/0.04/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/visisland/0.04-6.json
+
+  - name: yiprit
+    size: 20480
+    id: 2780320171
+    topographic: https://static.xam.nu/dayz/maps/yiprit/31.07/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/yiprit/31.07/satellite/{z}/{x}/{y}.webp
+    # locations: https://static.xam.nu/dayz/json/yiprit/Jan.29-9.json
+    locations: https://www.izurvive.com/assets/yiprit/citynames-bc969f41.json
+    locations_izurvive: true
+
+  # modded from izurvive.com (not exists on xam.nu)
+  - name: lux
+    size: 15360
+    id: 3371742728
+    aliases: [luxredux]
+    topographic: https://maps.izurvive.com/maps/Lux-Top/1.0.0/tiles/{z}/{x}/{y}.webp
+    satellite: https://maps.izurvive.com/maps/Lux-Sat/1.0.0/tiles/{z}/{x}/{y}.webp
+    attribution: *izurvive
+    locations: https://www.izurvive.com/assets/lux/citynames-06c852e1.json
+    locations_izurvive: true
+
+  - name: varlind
+    size: 12800
+    id: 3498791414
+    aliases: [arland]
+    topographic: https://maps.izurvive.com/maps/Arland-Top/0.0.0/tiles/{z}/{x}/{y}.webp
+    satellite: https://maps.izurvive.com/maps/Arland-Sat/0.0.0/tiles/{z}/{x}/{y}.webp
+    attribution: *izurvive
+    locations: https://www.izurvive.com/assets/arland/citynames-59969f41.json
+    locations_izurvive: true
+
+  - name: swansisland
+    zoom: 4
+    size: 2048
+    id: 2517396668
+    topographic: https://maps.izurvive.com/maps/SwansIsland-Top/1.0.0/tiles/{z}/{x}/{tms_y}.png
+    satellite: https://maps.izurvive.com/maps/SwansIsland-Sat/1.0.0/tiles/{z}/{x}/{tms_y}.png
+    attribution: *izurvive
+    locations: https://static.xam.nu/dayz/json/swansisland/Sep.5-2.json
+
+  - name: greencounty
+    size: 10240
+    id: 2128098372
+    topographic: https://maps.izurvive.com/maps/GreenCounty-Top/0.0.0/tiles/{z}/{x}/{y}.webp
+    satellite: https://maps.izurvive.com/maps/GreenCounty-Sat/0.0.0/tiles/{z}/{x}/{y}.webp
+    attribution: *izurvive
+    locations: https://www.izurvive.com/assets/greencounty/citynames-671f0d91.json
+    locations_izurvive: true
+
+  # raw example
+  - name: utes
+    zoom: 4
+    size: 5120
+    id: 2241657614
+    satellite: https://github.com/BohemiaInteractive/DayZ-Samples/raw/refs/heads/master/Test_Terrain/source/gis_input/sat_lco.tif
+    attribution: '<a href="https://github.com/BohemiaInteractive/DayZ-Samples/tree/master/Test_Terrain" target="_blank">Bohemia Interactive DayZ-Samples</a>'
+    locations_geojson:
+      type: FeatureCollection
+      features:
+          - type: Feature
+            geometry:
+              type: Point
+              coordinates:
+                  - 73.564453
+                  - 59.489726
+            properties:
+              name: Utes Airfield
+              type: city
+          - type: Feature
+            geometry:
+              type: Point
+              coordinates:
+                  - 54.46968749999999
+                  - 78.7076454337005
+            properties:
+              name: Kamenyy
+              type: village
+          - type: Feature
+            geometry:
+              type: Point
+              coordinates:
+                  - 127.57007812500001
+                  - 41.18976652856567
+            properties:
+              name: Strelka
+              type: village

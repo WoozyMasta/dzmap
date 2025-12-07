@@ -1,0 +1,19 @@
+name: Base Workflow
+description: Reusable base workflow
+
+inputs:
+  go-version:
+    description: "Go version to use"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: ${{ inputs.go-version }}
+
+    - name: Tools
+      shell: bash
+      run: make tools
