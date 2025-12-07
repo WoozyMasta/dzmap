@@ -30,10 +30,10 @@ Image variants are available:
 
 Image | Content | Zoom | Size
 :-------------------------------: | :----------------------- | :-------: | :--------:
-`ghcr.io/wooymasta/dzmap:latest`  | Only binaries and config | —         | `~15 MB`
-`ghcr.io/wooymasta/dzmap:vanilla` | Official game + DLC maps | **Lvl 6** | `~200 MB`
-`ghcr.io/wooymasta/dzmap:slim`    | Official + modded (40+)  | **Lvl 4** | `~170 MB`
-`ghcr.io/wooymasta/dzmap:full`    | Official + modded (40+)  | **Lvl 6** | `~1.6 GB`
+`ghcr.io/woozymasta/dzmap:latest`  | Only binaries and config | —         | `~15 MB`
+`ghcr.io/woozymasta/dzmap:vanilla` | Official game + DLC maps | **Lvl 6** | `~200 MB`
+`ghcr.io/woozymasta/dzmap:slim`    | Official + modded (40+)  | **Lvl 4** | `~170 MB`
+`ghcr.io/woozymasta/dzmap:full`    | Official + modded (40+)  | **Lvl 6** | `~1.6 GB`
 
 ## Components
 
