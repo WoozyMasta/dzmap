@@ -13,6 +13,13 @@ and this project adheres to [Semantic Versioning][].
 ### Removed
 -->
 
+## Unreleased
+
+### Changed
+
+* implement tile-level fallback between topographic and satellite layers
+  before returning transparent tiles
+
 ## [0.1.0][] - 2025-12-07
 
 ### Added

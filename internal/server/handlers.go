@@ -80,9 +80,29 @@ func (s *ServerContext) HandleTileOrLoc(w http.ResponseWriter, r *http.Request) 
 	if len(parts) >= 6 {
 		// parts: maps, mapName, layer, z, x, y.webp
 		layer, z, x, y := parts[2], parts[3], parts[4], parts[5]
-		path := filepath.Join("maps", realMapName, layer, z, x, y)
 
-		if s.serveFile(w, r, path, "") {
+		// allow only known layers to prevent path probing
+		if layer != "topographic" && layer != "satellite" {
+			http.NotFound(w, r)
+			return
+		}
+
+		tryServe := func(l string) bool {
+			path := filepath.Join("maps", realMapName, l, z, x, y)
+			return s.serveFile(w, r, path, "")
+		}
+
+		// try requested layer
+		if tryServe(layer) {
+			return
+		}
+
+		// fallback to the other layer
+		alt := "satellite"
+		if layer == "satellite" {
+			alt = "topographic"
+		}
+		if tryServe(alt) {
 			return
 		}
 
