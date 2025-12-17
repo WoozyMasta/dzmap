@@ -29,7 +29,7 @@ ifeq ($(OS),Windows_NT)
 	BIN_SERVER := $(BIN_SERVER).exe
 endif
 
-.PHONY: all build containers push-containers release clean fmt vet align lint check deps tools generate
+.PHONY: all build containers push-containers release release-notes clean fmt vet align lint check deps tools generate
 
 all: check build
 
@@ -94,6 +94,12 @@ push-containers:
 
 release: containers push-containers
 	@echo ">> Release $(VERSION) finished."
+
+release-notes:
+	@awk '\
+	/^<!--/,/^-->/ { next } \
+	/^## \[[0-9]+\.[0-9]+\.[0-9]+\]/ { if (found) exit; found=1; next } found { print } \
+	' CHANGELOG.md
 
 generate:
 	@echo ">> Running generate..."
