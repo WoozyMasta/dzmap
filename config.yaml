@@ -29,6 +29,15 @@ maps:
     satellite: https://static.xam.nu/dayz/maps/sakhal/1.27/satellite/{z}/{x}/{y}.webp
     locations: https://static.xam.nu/dayz/json/sakhal/1.28-2.json
 
+  - name: nasdara
+    index: 3
+    size: 16384
+    id: 3816030
+    aliases: ["badlands"]
+    topographic: https://static.xam.nu/dayz/maps/nasdara/26.10.15/topographic/{z}/{x}/{y}.webp
+    satellite: https://static.xam.nu/dayz/maps/nasdara/26.10.15/satellite/{z}/{x}/{y}.webp
+    locations: https://static.xam.nu/dayz/json/nasdara/1.30-9.json
+
   # modded maps (xam.nu)
   - name: alteria
     size: 8192
